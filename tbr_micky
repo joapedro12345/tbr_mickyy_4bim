@@ -1,4 +1,4 @@
-CREATE DATABASE exerciciodefixacao;
+CREATE DATABASE exerciciodefixaca;
 USE exerciciodefixacao;
 
 --exercicio1
@@ -26,3 +26,26 @@ SELECT
         ELSE nome
     END AS nome_com_tratamento
 FROM nomes;
+
+--exercicio2
+--a)
+CREATE TABLE produtos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    produto VARCHAR(255) NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    quantidade INT NOT NULL
+);
+
+--b)
+SELECT produto, ROUND(preco, 2) AS preco_arredondado, quantidade
+FROM produtos;
+
+--c)
+SELECT produto, preco, ABS(quantidade) AS quantidade_absoluta
+FROM produtos;
+
+--d)
+SELECT AVG(preco) AS media_precos
+FROM produtos;
+
+
