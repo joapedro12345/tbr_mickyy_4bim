@@ -114,3 +114,17 @@ BEGIN
 --b)
 SELECT produto, preco, quantidade, TOTAL_VALOR(preco, quantidade) AS valor_total
 FROM produtos;
+
+--exercicio6
+--a)
+SELECT COUNT(produto) FROM produtos;
+
+--b)
+SELECT MAX(preco) FROM produtos;
+
+--c)
+SELECT MIN(preco) FROM produtos;
+
+--d)
+SELECT SUM(IF(quantidade > 0, preco * quantidade, 0)) AS total_em_estoque
+FROM produtos;
