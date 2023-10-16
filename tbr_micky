@@ -48,4 +48,36 @@ FROM produtos;
 SELECT AVG(preco) AS media_precos
 FROM produtos;
 
+--exercicio3
+--a)
+CREATE TABLE eventos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    data_evento DATETIME
+);
+
+INSERT INTO eventos (data_evento) VALUES
+('2015-10-09 16:0:11'),
+('2007-07-02 10:07:12'),
+('1999-12-23 19:06:59'),
+('194-04-05 11:05:59'),
+('2025-01-10 20:04:00'),
+('1900-02-21 13:03:34'),
+('2013-12-14 16:01:30'),
+('2024-09-09 17:10:12'),
+('2021-08-19 18:57:10'),
+('2016-10-02 00:00:00'),
+('2048-09-14 10:06:00'),
+('2008-07-28 22:04:38');
+
+--b)
+INSERT INTO eventos (data_evento)
+SELECT NOW() as DatAtual;
+
+--c)
+SELECT data_evento, data_evento AS data_atual, DATEDIFF(NOW(), data_evento) AS Comparação_total
+FROM eventos;
+
+--d)
+SELECT DAYNAME(data_evento) AS nome_dia_semana
+FROM eventos;
 
